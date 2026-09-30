@@ -1,0 +1,66 @@
+{
+  "version": "2026.3.0",
+  "updated": "2026-09-30",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": "FastBD Research Labs (https://fast-bd.com)",
+  "benchmarks": {
+    "ihpi": {
+      "name": "Inbox Hook Preview Index",
+      "sample_size": 2500,
+      "url": "https://fast-bd.com/ihpi",
+      "tiers": [
+        {
+          "tier": "Commodity Fluff",
+          "reply_rate": 0.048,
+          "score_range": "0-39"
+        },
+        {
+          "tier": "Standard Qualified",
+          "reply_rate": 0.126,
+          "score_range": "40-69"
+        },
+        {
+          "tier": "High-Signal Hook",
+          "reply_rate": 0.234,
+          "score_range": "70-87"
+        },
+        {
+          "tier": "Elite Conversion",
+          "reply_rate": 0.382,
+          "score_range": "88-100"
+        }
+      ]
+    },
+    "cnrr": {
+      "name": "Client Name Recovery Rate",
+      "sample_size": 18400,
+      "recovery_rate": 0.734,
+      "lift": 2.4,
+      "url": "https://fast-bd.com/cnrr"
+    },
+    "cbr": {
+      "name": "Connects Burn Rate",
+      "sample_size": 2500,
+      "url": "https://fast-bd.com/cbr",
+      "commodity_cbr": 340,
+      "commodity_cac": 51.0,
+      "elite_cbr": 62,
+      "elite_cac": 9.3
+    },
+    "lcr": {
+      "name": "LinkedIn Connection Rate & ALPS",
+      "sample_size": 14200,
+      "url": "https://fast-bd.com/lcr",
+      "pitch_acceptance": 0.142,
+      "hook_acceptance": 0.437
+    },
+    "mvvr": {
+      "name": "Mobile Viewport Vulnerability Rate",
+      "sample_size": 8600,
+      "url": "https://fast-bd.com/mvvr",
+      "viewport_failure_rate": 0.412,
+      "generic_pitch_reply": 0.012,
+      "flaw_teardown_reply": 0.246
+    }
+  }
+}
