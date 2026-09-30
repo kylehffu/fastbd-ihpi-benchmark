@@ -28,3 +28,7 @@ classifiers = [
 
 [project.scripts]
 ihpi = "calculate_ihpi:main"
+
+[tool.setuptools]
+py-modules = ["calculate_ihpi", "run_benchmark"]
+
