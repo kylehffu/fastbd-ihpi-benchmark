@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sample-01",
+    "title": "Full-Stack Next.js Developer for B2B Analytics Dashboard",
+    "category": "Web Development",
+    "proposal": "Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling $60k/mo. On my last data mining project, we extracted 400k catalog items daily.",
+    "expected_grade": "A+"
+  },
+  {
+    "id": "sample-02",
+    "title": "Python Web Scraping & LLM Pipeline",
+    "category": "Data Engineering",
+    "proposal": "Hi Sarah, saw your Playwright & LLM pipeline needs—I built residential proxy rotation clusters that scrape 400k pages/day without Cloudflare blocks.",
+    "expected_grade": "A+"
+  },
+  {
+    "id": "sample-03",
+    "title": "Mobile App UI/UX Redesign in Figma",
+    "category": "Design",
+    "proposal": "Hi David, looked over your fintech wallet concept—I designed an iOS wallet with 4.8 stars that increased onboarding completion by 34%.",
+    "expected_grade": "A+"
+  },
+  {
+    "id": "sample-04",
+    "title": "Generic Template (Fluff Opening)",
+    "category": "Generic",
+    "proposal": "Dear Hiring Manager, I am a passionate developer with 5 years experience. I came across your job posting and would love to work with you. Look no further.",
+    "expected_grade": "F"
+  },
+  {
+    "id": "sample-05",
+    "title": "Average Commodity Proposal",
+    "category": "Web Development",
+    "proposal": "Hi there, I can help you with your React and Node website. I have built many websites and can start immediately today. Let me know if you want to chat.",
+    "expected_grade": "C"
+  }
+]
