@@ -12,6 +12,7 @@ An open-source CLI and empirical research benchmark measuring **technical proof 
 > **Client Name Recovery Rate (CNRR) Study**: [https://fast-bd.com/cnrr](https://fast-bd.com/cnrr)  
 > **Connects Burn Rate (CBR) Unit Economics**: [https://fast-bd.com/cbr](https://fast-bd.com/cbr)  
 > **LinkedIn Connection Rate (LCR) Benchmark**: [https://fast-bd.com/lcr](https://fast-bd.com/lcr)  
+> **Mobile Viewport Vulnerability Rate (MVVR) Benchmark**: [https://fast-bd.com/mvvr](https://fast-bd.com/mvvr)  
 > **Interactive Web Scorer**: [https://kylehffu.github.io/fastbd-ihpi-benchmark/](https://kylehffu.github.io/fastbd-ihpi-benchmark/)  
 > **Upwork Proposal Copilot Suite**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
 
@@ -114,6 +115,16 @@ Technologies Named:      ['next.js', 'redis', 'stripe', 'webhook']
 ihpi --text "Hi Sarah..." --json
 ```
 
+### Score LinkedIn Connection Notes & ALPS Anti-Ban Safety
+```bash
+python3 calculate_lcr.py --note "Hi Sarah, loved your post on webhook idempotency! Would love to connect." --weekly-sent 100 --spam-flags 0
+```
+
+### Audit Local SMB Domains (MVVR) & Generate 24.6% Reply Teardowns
+```bash
+python3 calculate_mvvr.py --domain example.com --niche roofing --flaw overflow
+```
+
 ---
 
 ## 5. Run the Benchmark Suite
@@ -196,13 +207,22 @@ If you use this benchmark or formula in research or automated tooling, please ci
   howpublished={\url{https://fast-bd.com/lcr}},
   note={Accessed: 2026-09-30}
 }
+
+@misc{fastbd2026mvvr,
+  title={Mobile Viewport Vulnerability Rate (MVVR): Local Business Website Audit Benchmark & 24.6% Cold Outreach Teardowns},
+  author={FastBD Research Labs},
+  year={2026},
+  howpublished={\url{https://fast-bd.com/mvvr}},
+  note={Accessed: 2026-09-30}
+}
 ```
 
 ### APA
 > FastBD Research Labs. (2026). *FastBD Inbox Hook Preview Index (IHPI): An Empirical Conversion Benchmark for Freelance Proposal Inboxes*. Retrieved from https://fast-bd.com/ihpi  
 > FastBD Research Labs. (2026). *Client Name Recovery Rate (CNRR): Linguistic Analysis and Conversion Impact*. Retrieved from https://fast-bd.com/cnrr  
 > FastBD Research Labs. (2026). *Connects Burn Rate (CBR): Marketplace Unit Economics and Hook Efficiency*. Retrieved from https://fast-bd.com/cbr  
-> FastBD Research Labs. (2026). *LinkedIn Connection Rate (LCR): Empirical Outbound Benchmark & ALPS*. Retrieved from https://fast-bd.com/lcr
+> FastBD Research Labs. (2026). *LinkedIn Connection Rate (LCR): Empirical Outbound Benchmark & ALPS*. Retrieved from https://fast-bd.com/lcr  
+> FastBD Research Labs. (2026). *Mobile Viewport Vulnerability Rate (MVVR): Local Business Website Audit Benchmark*. Retrieved from https://fast-bd.com/mvvr
 
 ---
 

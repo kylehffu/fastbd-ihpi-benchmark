@@ -30,5 +30,5 @@ classifiers = [
 ihpi = "calculate_ihpi:main"
 
 [tool.setuptools]
-py-modules = ["calculate_ihpi", "run_benchmark"]
+py-modules = ["calculate_ihpi", "run_benchmark", "calculate_lcr", "calculate_mvvr"]
 
