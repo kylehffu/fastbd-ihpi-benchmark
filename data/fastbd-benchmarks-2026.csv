@@ -1,0 +1,19 @@
+Benchmark,Metric,Category,Sample_Size,Primary_Value,Lift_Or_Baseline,Source_URL
+IHPI,Reply_Rate,Commodity_Fluff,2500,4.8%,Baseline (0%),https://fast-bd.com/ihpi
+IHPI,Reply_Rate,Standard_Qualified,2500,12.6%,+162%,https://fast-bd.com/ihpi
+IHPI,Reply_Rate,High_Signal_Hook,2500,23.4%,+387%,https://fast-bd.com/ihpi
+IHPI,Reply_Rate,Elite_Conversion,2500,38.2%,+695%,https://fast-bd.com/ihpi
+CNRR,Salutation_Reply_Rate,Generic_Opening,18400,8.4%,Baseline (0%),https://fast-bd.com/cnrr
+CNRR,Salutation_Reply_Rate,Neutral_Casual,18400,14.2%,+69%,https://fast-bd.com/cnrr
+CNRR,Salutation_Reply_Rate,Verified_First_Name,18400,28.6%,+240%,https://fast-bd.com/cnrr
+CBR,Connects_Per_Contract,Commodity_Bidding,2500,340 connects ($51.00 CAC),Baseline (0%),https://fast-bd.com/cbr
+CBR,Connects_Per_Contract,Standard_Bidding,2500,175 connects ($26.25 CAC),-48.5% Cost,https://fast-bd.com/cbr
+CBR,Connects_Per_Contract,High_Signal_Bidding,2500,98 connects ($14.70 CAC),-71.2% Cost,https://fast-bd.com/cbr
+CBR,Connects_Per_Contract,Elite_Hook_Bidding,2500,62 connects ($9.30 CAC),-81.8% Cost,https://fast-bd.com/cbr
+LCR,Connection_Acceptance_Rate,Immediate_Sales_Pitch,14200,14.2%,Baseline (0%),https://fast-bd.com/lcr
+LCR,Connection_Acceptance_Rate,Blank_No_Note,14200,28.4%,+100%,https://fast-bd.com/lcr
+LCR,Connection_Acceptance_Rate,Peer_Compliment,14200,31.8%,+124%,https://fast-bd.com/lcr
+LCR,Connection_Acceptance_Rate,Observation_Hook_60_120_Chars,14200,43.7%,+207%,https://fast-bd.com/lcr
+MVVR,Outbound_Cold_Reply_Rate,Generic_Design_Pitch,8600,1.2%,Baseline (0%),https://fast-bd.com/mvvr
+MVVR,Outbound_Cold_Reply_Rate,Templated_Portfolio,8600,3.8%,+216%,https://fast-bd.com/mvvr
+MVVR,Outbound_Cold_Reply_Rate,Technical_Flaw_Teardown,8600,24.6%,+1950%,https://fast-bd.com/mvvr

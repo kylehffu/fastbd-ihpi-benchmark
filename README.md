@@ -8,11 +8,13 @@
 
 An open-source CLI and empirical research benchmark measuring **technical proof density** and **conversion probability** in the first 160 characters of freelance proposals (Upwork, Freelancer, Contra).
 
+> **2026 Flagship Benchmark Report**: [https://fast-bd.com/report-2026](https://fast-bd.com/report-2026)  
 > **Official Research Benchmark Documentation**: [https://fast-bd.com/ihpi](https://fast-bd.com/ihpi)  
 > **Client Name Recovery Rate (CNRR) Study**: [https://fast-bd.com/cnrr](https://fast-bd.com/cnrr)  
 > **Connects Burn Rate (CBR) Unit Economics**: [https://fast-bd.com/cbr](https://fast-bd.com/cbr)  
 > **LinkedIn Connection Rate (LCR) Benchmark**: [https://fast-bd.com/lcr](https://fast-bd.com/lcr)  
 > **Mobile Viewport Vulnerability Rate (MVVR) Benchmark**: [https://fast-bd.com/mvvr](https://fast-bd.com/mvvr)  
+> **Open Datasets (JSON & CSV)**: [https://fast-bd.com/data/fastbd-benchmarks-2026.json](https://fast-bd.com/data/fastbd-benchmarks-2026.json)  
 > **Interactive Web Scorer**: [https://kylehffu.github.io/fastbd-ihpi-benchmark/](https://kylehffu.github.io/fastbd-ihpi-benchmark/)  
 > **Upwork Proposal Copilot Suite**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
 
@@ -115,14 +117,34 @@ Technologies Named:      ['next.js', 'redis', 'stripe', 'webhook']
 ihpi --text "Hi Sarah..." --json
 ```
 
-### Score LinkedIn Connection Notes & ALPS Anti-Ban Safety
+### 1. Score Proposal 160-Char Hooks (IHPI)
 ```bash
-python3 calculate_lcr.py --note "Hi Sarah, loved your post on webhook idempotency! Would love to connect." --weekly-sent 100 --spam-flags 0
+ihpi --text "Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling \$60k/mo."
 ```
 
-### Audit Local SMB Domains (MVVR) & Generate 24.6% Reply Teardowns
+### 2. Harvest Client Names from Past Reviews (CNRR)
 ```bash
-python3 calculate_mvvr.py --domain example.com --niche roofing --flaw overflow
+cnrr --review "Thanks Michael for the prompt communication and clear specs!"
+```
+
+### 3. Calculate Connects Burn Rate (CBR) & CAC Savings
+```bash
+cbr --proposals 50 --connects-per-bid 16 --baseline-rate 5.0 --target-rate 25.0
+```
+
+### 4. Score LinkedIn Connection Notes & ALPS Anti-Ban Safety (LCR)
+```bash
+lcr --note "Hi Sarah, loved your post on webhook idempotency! Would love to connect." --weekly-sent 100 --spam-flags 0
+```
+
+### 5. Audit Local SMB Domains (MVVR) & Generate 24.6% Reply Teardowns
+```bash
+mvvr --domain example.com --niche roofing --flaw overflow
+```
+
+### 6. Export Machine-Readable Datasets (JSON & CSV)
+```bash
+python3 export_datasets.py data/
 ```
 
 ---
@@ -176,6 +198,15 @@ If you use this benchmark or formula in research or automated tooling, please ci
 
 ### BibTeX
 ```bibtex
+@techreport{fastbd2026report,
+  title={State of B2B AI Outreach Benchmark Report (2026): Cross-Platform Empirical Meta-Analysis},
+  author={{FastBD Research Labs}},
+  year={2026},
+  month={September},
+  institution={FastBD Suite},
+  url={https://fast-bd.com/report-2026}
+}
+
 @misc{fastbd2026ihpi,
   title={FastBD Inbox Hook Preview Index (IHPI): An Empirical Conversion Benchmark for Freelance Proposal Inboxes},
   author={FastBD Research Labs},
