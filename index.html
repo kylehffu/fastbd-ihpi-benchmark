@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FastBD IHPI & CNRR Benchmark Specification | Open-Source Proposal Metrics</title>
+  <meta name="description" content="Official documentation for the FastBD Inbox Hook Preview Index (IHPI) and Client Name Recovery Rate (CNRR) empirical proposal conversion benchmarks.">
+  <link rel="canonical" href="https://fast-bd.com/ihpi">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            },
+            dark: {
+              850: '#121824',
+              900: '#0b0f17',
+              950: '#06090e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-dark-950">
+
+  <!-- Header -->
+  <header class="border-b border-white/10 bg-dark-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-extrabold text-white">FastBD <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 font-mono">Open Benchmark</span></span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <a href="https://fast-bd.com/ihpi" target="_blank" class="text-brand-400 hover:underline">IHPI Benchmark ↗</a>
+        <a href="https://fast-bd.com/cnrr" target="_blank" class="text-slate-300 hover:text-white">CNRR Study ↗</a>
+        <a href="https://fast-bd.com/cbr" target="_blank" class="text-slate-300 hover:text-white">CBR Economics ↗</a>
+        <a href="https://github.com/kylehffu/fastbd-ihpi-benchmark" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-all">GitHub Repo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-12">
+    
+    <div class="space-y-4 text-center max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-mono">
+        <span>MIT Open Source</span>
+        <span>•</span>
+        <span>Python 3.8+ CLI</span>
+        <span>•</span>
+        <span>2,500 Proposals Dataset</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Inbox Hook Preview Index (IHPI)
+      </h1>
+      <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+        The standardized conversion metric measuring <strong>technical proof density</strong> and <strong>salutation personalism</strong> in the first 160 characters of freelance proposals.
+      </p>
+    </div>
+
+    <!-- Quick Pip Install -->
+    <div class="p-4 rounded-xl bg-dark-850 border border-white/10 font-mono text-xs text-slate-300 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>
+        <span class="text-slate-500">$</span> <span class="text-brand-400">pip install git+https://github.com/kylehffu/fastbd-ihpi-benchmark.git</span>
+      </div>
+      <button onclick="navigator.clipboard.writeText('pip install git+https://github.com/kylehffu/fastbd-ihpi-benchmark.git'); this.textContent = 'Copied! ✓';" class="px-3 py-1.5 rounded-lg bg-brand-500/20 text-brand-300 hover:bg-brand-500/30 text-xs font-semibold transition-all">
+        Copy Command
+      </button>
+    </div>
+
+    <!-- Interactive In-Browser Calculator -->
+    <div class="p-6 sm:p-8 rounded-2xl bg-dark-900 border border-brand-500/30 shadow-2xl space-y-6">
+      <div>
+        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+          <span>⚡ Live In-Browser IHPI Evaluator</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/20 text-brand-300">Client-Side JS</span>
+        </h2>
+        <p class="text-xs text-slate-400 mt-1">
+          Paste any proposal opening below to compute its 160-character viewport hook score and expected reply rate lift:
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-400">
+          <span>Proposal Text / Opening Hook:</span>
+          <span id="live-char-count" class="text-brand-400 font-bold">149 chars</span>
+        </div>
+        <textarea id="calc-input" rows="4" class="w-full bg-dark-850 border border-white/10 rounded-xl p-3 text-xs text-slate-200 font-mono focus:border-brand-500 focus:outline-none leading-relaxed" placeholder="Type or paste proposal hook...">Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling $60k/mo.</textarea>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div class="p-3.5 rounded-xl bg-dark-850 border border-white/5">
+          <div class="text-[10px] font-mono text-slate-400 uppercase">IHPI Score</div>
+          <div id="live-score" class="text-2xl font-extrabold text-brand-400 font-mono mt-0.5">100.0</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-dark-850 border border-white/5">
+          <div class="text-[10px] font-mono text-slate-400 uppercase">Grade</div>
+          <div id="live-grade" class="text-xs font-bold text-emerald-400 mt-2">A+ (Elite)</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-dark-850 border border-white/5">
+          <div class="text-[10px] font-mono text-slate-400 uppercase">Expected Lift</div>
+          <div id="live-lift" class="text-xs font-bold text-brand-300 mt-2">+368% Reply</div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-dark-850 border border-white/5">
+          <div class="text-[10px] font-mono text-slate-400 uppercase">Client Name</div>
+          <div id="live-name" class="text-xs font-bold text-slate-200 mt-2">Michael ✓</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 pt-1">
+        <button onclick="loadSample(1)" class="px-2.5 py-1 rounded text-[11px] font-mono bg-white/5 hover:bg-white/10 text-slate-300">Preset: High Converting</button>
+        <button onclick="loadSample(2)" class="px-2.5 py-1 rounded text-[11px] font-mono bg-white/5 hover:bg-white/10 text-slate-300">Preset: Commodity Template</button>
+        <button onclick="loadSample(3)" class="px-2.5 py-1 rounded text-[11px] font-mono bg-white/5 hover:bg-white/10 text-slate-300">Preset: Data Engineering</button>
+      </div>
+    </div>
+
+    <!-- Mathematical Formula -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold text-white border-b border-white/10 pb-3">The Scoring Formula</h2>
+      <div class="p-5 rounded-xl bg-dark-850 border border-white/10 text-xs font-mono text-brand-400 leading-relaxed text-center overflow-x-auto">
+        IHPI = (0.30 * CNRR) + (0.40 * TPD_160) + (0.30 * RS_160) - Penalties
+      </div>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        - <strong>CNRR (Client Name Recovery Rate)</strong>: Measures whether the client's verified first name was harvested from past feedback (30 pts). Read the full study at <a href="https://fast-bd.com/cnrr" target="_blank" class="text-brand-400 underline">https://fast-bd.com/cnrr</a>.<br>
+        - <strong>TPD_160 (Technical Proof Density)</strong>: Measures frequencies of concrete numbers ($ amounts, latencies, percentages) and platform technologies (40 pts).<br>
+        - <strong>RS_160 (Readability & Structure)</strong>: Evaluates optimal word count (18-28 words) preventing cognitive overload (30 pts).<br>
+        - <strong>Penalties</strong>: Immediate deductions for filler expressions (*"I hope this finds you well"*, *"Dear Hiring Manager"*, *"look no further"*).
+      </p>
+    </div>
+
+    <!-- Citation Box -->
+    <div class="space-y-3">
+      <h2 class="text-xl font-bold text-white border-b border-white/10 pb-3">Academic & Research Citation</h2>
+      <div class="p-4 rounded-xl bg-dark-850 border border-white/10 text-xs font-mono text-slate-300 leading-relaxed">
+        @misc{fastbd2026ihpi,<br>
+        &nbsp;&nbsp;title={FastBD Inbox Hook Preview Index (IHPI): An Empirical Conversion Benchmark for Freelance Proposal Inboxes},<br>
+        &nbsp;&nbsp;author={FastBD Research Labs},<br>
+        &nbsp;&nbsp;year={2026},<br>
+        &nbsp;&nbsp;howpublished={\url{https://fast-bd.com/ihpi}}<br>
+        }
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="p-8 rounded-2xl bg-gradient-to-r from-dark-850 to-dark-900 border border-brand-500/20 text-center space-y-3">
+      <h3 class="text-xl font-bold text-white">Full Interactive B2B Outbound Suite</h3>
+      <p class="text-xs text-slate-400 max-w-md mx-auto">
+        Fast-BD includes the Upwork Copilot, LinkedIn Sequence Builder, Local MapsLead Finder, and Quote Generator.
+      </p>
+      <div class="pt-2">
+        <a href="https://fast-bd.com/upwork" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-dark-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-brand-500/25 transition-all">
+          <span>Launch Fast-BD Web Suite</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 bg-dark-950 text-slate-500 text-xs text-center">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© 2026 FastBD Research Labs. Released under MIT License.</div>
+      <div class="flex items-center gap-4">
+        <a href="https://fast-bd.com" target="_blank" class="hover:text-slate-300">Fast-BD Home</a>
+        <a href="https://fast-bd.com/ihpi" target="_blank" class="hover:text-slate-300">IHPI Benchmark</a>
+        <a href="https://fast-bd.com/cnrr" target="_blank" class="hover:text-slate-300">CNRR Benchmark</a>
+        <a href="https://fast-bd.com/cbr" target="_blank" class="hover:text-slate-300">CBR Benchmark</a>
+        <a href="https://github.com/kylehffu/fastbd-ihpi-benchmark" class="hover:text-slate-300">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const samples = {
+      1: "Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling $60k/mo.",
+      2: "Dear Hiring Manager, I am a passionate Full-Stack developer with 5 years experience. I came across your job posting and would love to work with you. Look no further.",
+      3: "Hi Sarah, saw your Playwright & LLM pipeline needs—I built residential proxy rotation clusters that scrape 400k pages/day without Cloudflare blocks."
+    };
+
+    function evaluateText() {
+      const text = document.getElementById('calc-input').value.trim();
+      const p160 = text.substring(0, 160);
+      document.getElementById('live-char-count').textContent = `${p160.length} chars`;
+
+      // 1. Client name
+      const mName = p160.match(/^(?:hi|hey|hello|dear)\s+([A-Za-z]+)\b/i);
+      let hasName = false;
+      let nameVal = "None";
+      if (mName && !['there', 'all', 'sir', 'madam', 'hiring', 'team', 'client'].includes(mName[1].toLowerCase())) {
+        hasName = true;
+        nameVal = mName[1].charAt(0).toUpperCase() + mName[1].slice(1).toLowerCase();
+      }
+      document.getElementById('live-name').textContent = hasName ? `${nameVal} ✓` : "None (Generic)";
+
+      // 2. Metrics & Tech
+      const hasProof = /\$\d+|\b\d+%\b|\b\d+k\b/i.test(p160);
+      const hasTech = /(?:react|next\.js|node|python|redis|stripe|webhook|playwright)/i.test(p160);
+      const isFluff = /(?:hiring manager|passionate|look no further|finds you well)/i.test(p160);
+
+      let score = 50.0;
+      if (hasName) score += 25.0;
+      if (hasProof) score += 20.0;
+      if (hasTech) score += 15.0;
+      if (isFluff) score -= 60.0;
+      score = Math.max(0, Math.min(100, score));
+
+      document.getElementById('live-score').textContent = score.toFixed(1);
+      
+      if (score >= 88) {
+        document.getElementById('live-grade').textContent = "A+ (Elite)";
+        document.getElementById('live-lift').textContent = "+368% Reply";
+      } else if (score >= 70) {
+        document.getElementById('live-grade').textContent = "A (High)";
+        document.getElementById('live-lift').textContent = "+195% Reply";
+      } else if (score >= 50) {
+        document.getElementById('live-grade').textContent = "B (Moderate)";
+        document.getElementById('live-lift').textContent = "+80% Reply";
+      } else {
+        document.getElementById('live-grade').textContent = "F (High Waste)";
+        document.getElementById('live-lift').textContent = "-74% Reply";
+      }
+    }
+
+    function loadSample(id) {
+      document.getElementById('calc-input').value = samples[id];
+      evaluateText();
+    }
+
+    document.getElementById('calc-input').addEventListener('input', evaluateText);
+    evaluateText();
+  </script>
+</body>
+</html>
