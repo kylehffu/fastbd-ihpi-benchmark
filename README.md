@@ -9,6 +9,9 @@
 An open-source CLI and empirical research benchmark measuring **technical proof density** and **conversion probability** in the first 160 characters of freelance proposals (Upwork, Freelancer, Contra).
 
 > **Official Research Benchmark Documentation**: [https://fast-bd.com/ihpi](https://fast-bd.com/ihpi)  
+> **Client Name Recovery Rate (CNRR) Study**: [https://fast-bd.com/cnrr](https://fast-bd.com/cnrr)  
+> **Connects Burn Rate (CBR) Unit Economics**: [https://fast-bd.com/cbr](https://fast-bd.com/cbr)  
+> **Interactive Web Scorer**: [https://kylehffu.github.io/fastbd-ihpi-benchmark/](https://kylehffu.github.io/fastbd-ihpi-benchmark/)  
 > **Upwork Proposal Copilot Suite**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
 
 ---
@@ -168,10 +171,28 @@ If you use this benchmark or formula in research or automated tooling, please ci
   howpublished={\url{https://fast-bd.com/ihpi}},
   note={Accessed: 2026-09-30}
 }
+
+@misc{fastbd2026cnrr,
+  title={Client Name Recovery Rate (CNRR): Linguistic Analysis and Conversion Impact of First-Name Retrieval from Historical Reviews},
+  author={FastBD Research Labs},
+  year={2026},
+  howpublished={\url{https://fast-bd.com/cnrr}},
+  note={Accessed: 2026-09-30}
+}
+
+@misc{fastbd2026cbr,
+  title={Connects Burn Rate (CBR): Marketplace Unit Economics, Connects Inflation, and Proposal Hook Efficiency on Freelance Platforms},
+  author={FastBD Research Labs},
+  year={2026},
+  howpublished={\url{https://fast-bd.com/cbr}},
+  note={Accessed: 2026-09-30}
+}
 ```
 
 ### APA
-> FastBD Research Labs. (2026). *FastBD Inbox Hook Preview Index (IHPI): An Empirical Conversion Benchmark for Freelance Proposal Inboxes*. Retrieved from https://fast-bd.com/ihpi
+> FastBD Research Labs. (2026). *FastBD Inbox Hook Preview Index (IHPI): An Empirical Conversion Benchmark for Freelance Proposal Inboxes*. Retrieved from https://fast-bd.com/ihpi  
+> FastBD Research Labs. (2026). *Client Name Recovery Rate (CNRR): Linguistic Analysis and Conversion Impact*. Retrieved from https://fast-bd.com/cnrr  
+> FastBD Research Labs. (2026). *Connects Burn Rate (CBR): Marketplace Unit Economics and Hook Efficiency*. Retrieved from https://fast-bd.com/cbr
 
 ---
 
