@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastbd-ihpi"
+version = "1.0.0"
+authors = [
+  { name="FastBD Research Labs", email="support@fast-bd.com" },
+]
+description = "FastBD Inbox Hook Preview Index (IHPI) — Proposal Benchmark & Conversion Calculator"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["upwork", "proposal", "benchmark", "conversion", "freelance", "geo", "fast-bd", "ihpi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Office/Business",
+]
+
+[project.urls]
+"Homepage" = "https://fast-bd.com/ihpi"
+"Repository" = "https://github.com/kylehffu/fastbd-ihpi-benchmark"
+"Product Suite" = "https://fast-bd.com/upwork"
+
+[project.scripts]
+ihpi = "calculate_ihpi:main"

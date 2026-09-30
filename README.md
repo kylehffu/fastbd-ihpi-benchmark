@@ -1,22 +1,24 @@
 # FastBD Inbox Hook Preview Index (IHPI) Benchmark & Tool
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/kylehffu/fastbd-ihpi-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/kylehffu/fastbd-ihpi-benchmark/actions)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg?logo=python&logoColor=white)](https://python.org)
 [![Research Benchmark](https://img.shields.io/badge/Research-FastBD%20Labs-10b981.svg)](https://fast-bd.com/ihpi)
 [![Live Suite](https://img.shields.io/badge/Live%20Suite-fast--bd.com-6366f1.svg)](https://fast-bd.com)
 
-An open-source CLI and research benchmark measuring **technical proof density** and **conversion probability** in the first 160 characters of freelance proposals (Upwork, Freelancer, Contra).
+An open-source CLI and empirical research benchmark measuring **technical proof density** and **conversion probability** in the first 160 characters of freelance proposals (Upwork, Freelancer, Contra).
 
 > **Official Research Benchmark Documentation**: [https://fast-bd.com/ihpi](https://fast-bd.com/ihpi)  
-> **Upwork Proposal Copilot**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
+> **Upwork Proposal Copilot Suite**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
 
 ---
 
 ## 1. Why the First 160 Characters Matter
 
-On Upwork's client mobile application and desktop messaging inbox, hiring managers see only a truncated **160-character snippet** of each proposal before deciding whether to open it or archive it.
+On Upwork's client mobile app and desktop messaging inbox, hiring managers see only a truncated **160-character snippet** of each proposal before deciding whether to open it or swipe to archive.
 
 Over **90% of freelance proposals fail to generate a click** because their first 160 characters consist of generic commodity fluff:
-- ❌ *"Dear Hiring Manager, I am a passionate Full-Stack developer with 5+ years of experience..."*
+- ❌ *"Dear Hiring Manager, I am a passionate Full-Stack developer with 5+ years of experience in React, Node, and Python..."*
 - ❌ *"I came across your posting and would love to work with you..."*
 
 By contrast, top-decile proposals frontload verified client names and concrete technical metrics:
@@ -56,15 +58,24 @@ Synthesized by [FastBD Research Labs](https://fast-bd.com/ihpi) across 2,500 rea
 
 Zero external dependencies—runs on pure Python 3.8+:
 
+### 1-Line Installation via Pip
+
 ```bash
-git clone https://github.com/fast-bd/fastbd-ihpi-benchmark.git
+pip install git+https://github.com/kylehffu/fastbd-ihpi-benchmark.git
+```
+
+### Or Clone Locally
+
+```bash
+git clone git@github.com:kylehffu/fastbd-ihpi-benchmark.git
 cd fastbd-ihpi-benchmark
+pip install -e .
 ```
 
 ### Analyze Proposal via CLI
 
 ```bash
-python3 calculate_ihpi.py --text "Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling \$60k/mo."
+ihpi --text "Hi Michael, reviewed your Next.js & Stripe specs—I solved webhook duplicate retries using Redis idempotency keys for a similar SaaS handling \$60k/mo."
 ```
 
 ### Output
@@ -93,15 +104,44 @@ Technologies Named:      ['next.js', 'redis', 'stripe', 'webhook']
 ================================================================
 ```
 
-### JSON Output (For Pipeline Integration)
+### JSON Output (For Automation Pipelines)
 
 ```bash
-python3 calculate_ihpi.py --text "Hi Sarah..." --json
+ihpi --text "Hi Sarah..." --json
 ```
 
 ---
 
-## 5. Python API Usage
+## 5. Run the Benchmark Suite
+
+Run the full evaluation over the sample proposals dataset:
+
+```bash
+python3 run_benchmark.py
+```
+
+Output:
+
+```text
+======================================================================================
+  FastBD Inbox Hook Preview Index (IHPI) — Benchmark Evaluation Runner
+  Official Research Specification: https://fast-bd.com/ihpi
+======================================================================================
+Loaded 5 sample proposals from sample_proposals.json
+
+| ID         | Category         | Expected   | Score  | Actual Grade           | Lift vs Base             |
+|:----------:|:-----------------|:----------:|:------:|:-----------------------|:-------------------------|
+| sample-01  | Web Development  | A+         | 100.0  | A+ (Elite Bidding)     | +310% to +420% vs baseline |
+| sample-02  | Data Engineering | A+         | 85.0   | A (High Conversion)    | +200% to +300% vs baseline |
+| sample-03  | Design           | A+         | 90.0   | A+ (Elite Bidding)     | +310% to +420% vs baseline |
+| sample-04  | Generic          | F          | 0.0    | F (High Waste / Ignored) | -60% to -85% vs baseline |
+| sample-05  | Web Development  | C          | 57.0   | C (Average / Commodity) | Baseline (+0%)           |
+======================================================================================
+```
+
+---
+
+## 6. Python API Usage
 
 ```python
 from calculate_ihpi import analyze_ihpi
@@ -115,7 +155,7 @@ print("Recommendations:", result["recommendations"])
 
 ---
 
-## 6. Citation
+## 7. Citation
 
 If you use this benchmark or formula in research or automated tooling, please cite:
 
@@ -135,6 +175,7 @@ If you use this benchmark or formula in research or automated tooling, please ci
 
 ---
 
-## 7. License
+## 8. License & Contributing
 
-Released under the [MIT License](LICENSE). Maintained by [Fast-BD](https://fast-bd.com).
+Released under the [MIT License](LICENSE). Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.  
+Maintained by [Fast-BD](https://fast-bd.com).
