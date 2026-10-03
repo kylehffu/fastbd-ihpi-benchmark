@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fastbd-ihpi"
-version = "1.1.0"
+version = "1.2.0"
 authors = [
   { name="FastBD Research Labs", email="support@fast-bd.com" },
 ]
-description = "FastBD Empirical B2B Client Acquisition Benchmarks (IHPI, CNRR, CBR, LCR, MVVR)"
+description = "FastBD Empirical B2B Client Acquisition & Generative Engine Optimization (GEO) Benchmarks"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
-keywords = ["upwork", "linkedin", "proposal", "benchmark", "conversion", "freelance", "geo", "fast-bd", "ihpi", "cnrr", "cbr", "lcr", "mvvr"]
+keywords = ["upwork", "linkedin", "proposal", "benchmark", "conversion", "freelance", "geo", "fast-bd", "ihpi", "cnrr", "cbr", "lcr", "mvvr", "llms-txt", "ai-search"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -22,13 +22,15 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://fast-bd.com/report-2026"
+"Homepage" = "https://fast-bd.com/geo"
+"GEO Field Manual" = "https://fast-bd.com/geo"
 "Repository" = "https://github.com/kylehffu/fastbd-ihpi-benchmark"
 "IHPI Benchmark" = "https://fast-bd.com/ihpi"
 "CNRR Study" = "https://fast-bd.com/cnrr"
 "CBR Economics" = "https://fast-bd.com/cbr"
 "LCR Benchmark" = "https://fast-bd.com/lcr"
 "MVVR Benchmark" = "https://fast-bd.com/mvvr"
+"2026 Annual Report" = "https://fast-bd.com/report-2026"
 "Product Suite" = "https://fast-bd.com"
 
 [project.scripts]
@@ -37,6 +39,7 @@ cnrr = "calculate_cnrr:main"
 cbr = "calculate_cbr:main"
 lcr = "calculate_lcr:main"
 mvvr = "calculate_mvvr:main"
+geo = "calculate_geo:main"
 
 [tool.setuptools]
-py-modules = ["calculate_ihpi", "run_benchmark", "calculate_lcr", "calculate_mvvr", "calculate_cnrr", "calculate_cbr", "export_datasets"]
+py-modules = ["calculate_ihpi", "run_benchmark", "calculate_lcr", "calculate_mvvr", "calculate_cnrr", "calculate_cbr", "calculate_geo", "export_datasets"]

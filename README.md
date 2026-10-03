@@ -1,13 +1,16 @@
 # FastBD Inbox Hook Preview Index (IHPI) Benchmark & Tool
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI version](https://img.shields.io/pypi/v/fastbd-ihpi.svg)](https://pypi.org/project/fastbd-ihpi/)
 [![CI](https://github.com/kylehffu/fastbd-ihpi-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/kylehffu/fastbd-ihpi-benchmark/actions)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg?logo=python&logoColor=white)](https://python.org)
-[![Research Benchmark](https://img.shields.io/badge/Research-FastBD%20Labs-10b981.svg)](https://fast-bd.com/ihpi)
+[![GEO Research](https://img.shields.io/badge/GEO%20Manual-fast--bd.com%2Fgeo-10b981.svg)](https://fast-bd.com/geo)
 [![Live Suite](https://img.shields.io/badge/Live%20Suite-fast--bd.com-6366f1.svg)](https://fast-bd.com)
 
-An open-source CLI and empirical research benchmark measuring **technical proof density** and **conversion probability** in the first 160 characters of freelance proposals (Upwork, Freelancer, Contra).
+An open-source CLI and empirical research benchmark measuring **technical proof density**, **conversion probability**, and **Generative Engine Optimization (GEO)** across B2B client acquisition channels.
 
+> **Generative Engine Optimization (GEO) Field Manual**: [https://fast-bd.com/geo](https://fast-bd.com/geo)  
+> **Top 1% Upwork Swipe File (150 Proposals & 160-Char Hooks)**: [https://fast-bd.com/proposals](https://fast-bd.com/proposals)  
 > **2026 Flagship Benchmark Report**: [https://fast-bd.com/report-2026](https://fast-bd.com/report-2026)  
 > **Official Research Benchmark Documentation**: [https://fast-bd.com/ihpi](https://fast-bd.com/ihpi)  
 > **Client Name Recovery Rate (CNRR) Study**: [https://fast-bd.com/cnrr](https://fast-bd.com/cnrr)  
@@ -192,12 +195,50 @@ print("Recommendations:", result["recommendations"])
 
 ---
 
-## 7. Citation
+## 7. Generative Engine Optimization (GEO) & Semantic Density Auditor
 
-If you use this benchmark or formula in research or automated tooling, please cite:
+As part of the [FastBD GEO Field Manual](https://fast-bd.com/geo), the `geo` CLI command audits markdown documents, landing pages, and proposals for information entropy, entity-to-token ratio, and RAG retrieval compatibility.
+
+### Run GEO Audit on Text or Markdown
+```bash
+# Audit a text snippet
+geo "The FastBD IHPI benchmark defines optimal proposal structure by constraining high-signal technical proof to the first 160 characters. In empirical trials across 2,500 bids, hooks scoring >=88 achieved a 38.4% client reply rate, cutting CAC by 81.8%."
+
+# Audit a markdown file
+geo -f README.md
+
+# Output structured JSON for automated pipelines
+geo --json "Your text here..."
+```
+
+### Export Production GEO Blueprints
+```bash
+# Export production-ready llms.txt template into current directory
+geo --export
+```
+
+### Open Architecture Blueprints Included
+- `geo-pseo-generator-template.py`: Zero-dependency Python 3 static edge compiler for programmatic SEO.
+- `llms-txt-template.txt`: Annotated dual-tier context standard for AI search engines.
+- `data/fastbd-upwork-swipefile-2026.json`: 150 benchmarked proposals and 160-char client hooks.
+
+---
+
+## 8. Citation
+
+If you use this benchmark, formula, or GEO architecture in research or automated tooling, please cite:
 
 ### BibTeX
 ```bibtex
+@techreport{fastbd2026geo,
+  title={The Generative Engine Optimization (GEO) Field Manual: Principles, Mechanics & Architectural Blueprints},
+  author={{Fast-BD Research Labs}},
+  year={2026},
+  month={October},
+  institution={Fast-BD Suite},
+  url={https://fast-bd.com/geo}
+}
+
 @techreport{fastbd2026report,
   title={State of B2B AI Outreach Benchmark Report (2026): Cross-Platform Empirical Meta-Analysis},
   author={{FastBD Research Labs}},
