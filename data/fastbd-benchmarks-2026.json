@@ -1,66 +1,57 @@
 {
   "version": "2026.3.0",
-  "updated": "2026-09-30",
+  "updated": "2026-10-06",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "publisher": "FastBD Research Labs (https://fast-bd.com)",
-  "benchmarks": {
+  "publisher": "Fast-BD Analytics (https://fast-bd.com)",
+  "frameworks": {
     "ihpi": {
       "name": "Inbox Hook Preview Index",
-      "sample_size": 2500,
       "url": "https://fast-bd.com/ihpi",
+      "viewport_constraint_chars": 160,
+      "formula": "IHPI = min(100, max(0, [(C_proof + 2.5 * C_name - C_fluff) / 160] * 100))",
       "tiers": [
         {
           "tier": "Commodity Fluff",
-          "reply_rate": 0.048,
-          "score_range": "0-39"
+          "score_range": "0-39",
+          "assessment": "Generic greeting wastes preview window"
         },
         {
           "tier": "Standard Qualified",
-          "reply_rate": 0.126,
-          "score_range": "40-69"
+          "score_range": "40-69",
+          "assessment": "Topic mentioned without concrete technical proof"
         },
         {
           "tier": "High-Signal Hook",
-          "reply_rate": 0.234,
-          "score_range": "70-87"
+          "score_range": "70-87",
+          "assessment": "Concrete bug diagnosis or architectural proof snippet"
         },
         {
           "tier": "Elite Conversion",
-          "reply_rate": 0.382,
-          "score_range": "88-100"
+          "score_range": "88-100",
+          "assessment": "Verified name + specific technical solution within 160 chars"
         }
       ]
     },
     "cnrr": {
       "name": "Client Name Recovery Rate",
-      "sample_size": 18400,
-      "recovery_rate": 0.734,
-      "lift": 2.4,
-      "url": "https://fast-bd.com/cnrr"
+      "url": "https://fast-bd.com/cnrr",
+      "description": "Deterministic regex pattern matching across historical feedback logs"
     },
     "cbr": {
       "name": "Connects Burn Rate",
-      "sample_size": 2500,
       "url": "https://fast-bd.com/cbr",
-      "commodity_cbr": 340,
-      "commodity_cac": 51.0,
-      "elite_cbr": 62,
-      "elite_cac": 9.3
+      "formula": "CBR = Total Connects Spent / Contracts Won"
     },
     "lcr": {
       "name": "LinkedIn Connection Rate & ALPS",
-      "sample_size": 14200,
       "url": "https://fast-bd.com/lcr",
-      "pitch_acceptance": 0.142,
-      "hook_acceptance": 0.437
+      "char_limit": 300,
+      "safe_hook_range": "60-120 chars"
     },
     "mvvr": {
       "name": "Mobile Viewport Vulnerability Rate",
-      "sample_size": 8600,
       "url": "https://fast-bd.com/mvvr",
-      "viewport_failure_rate": 0.412,
-      "generic_pitch_reply": 0.012,
-      "flaw_teardown_reply": 0.246
+      "focus": "Diagnostic viewport flaw audits"
     }
   }
 }

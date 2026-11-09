@@ -13,75 +13,61 @@ import sys
 
 DATASET = {
     "version": "2026.3.0",
-    "updated": "2026-09-30",
+    "updated": "2026-10-06",
     "license": "https://creativecommons.org/licenses/by/4.0/",
-    "publisher": "FastBD Research Labs (https://fast-bd.com)",
-    "benchmarks": {
+    "publisher": "Fast-BD Analytics (https://fast-bd.com)",
+    "frameworks": {
         "ihpi": {
             "name": "Inbox Hook Preview Index",
-            "sample_size": 2500,
             "url": "https://fast-bd.com/ihpi",
+            "viewport_constraint_chars": 160,
+            "formula": "IHPI = min(100, max(0, [(C_proof + 2.5 * C_name - C_fluff) / 160] * 100))",
             "tiers": [
-                {"tier": "Commodity Fluff", "reply_rate": 0.048, "score_range": "0-39"},
-                {"tier": "Standard Qualified", "reply_rate": 0.126, "score_range": "40-69"},
-                {"tier": "High-Signal Hook", "reply_rate": 0.234, "score_range": "70-87"},
-                {"tier": "Elite Conversion", "reply_rate": 0.382, "score_range": "88-100"}
+                {"tier": "Commodity Fluff", "score_range": "0-39", "assessment": "Generic greeting wastes preview window"},
+                {"tier": "Standard Qualified", "score_range": "40-69", "assessment": "Topic mentioned without concrete technical proof"},
+                {"tier": "High-Signal Hook", "score_range": "70-87", "assessment": "Concrete bug diagnosis or architectural proof snippet"},
+                {"tier": "Elite Conversion", "score_range": "88-100", "assessment": "Verified name + specific technical solution within 160 chars"}
             ]
         },
         "cnrr": {
             "name": "Client Name Recovery Rate",
-            "sample_size": 18400,
-            "recovery_rate": 0.734,
-            "lift": 2.40,
-            "url": "https://fast-bd.com/cnrr"
+            "url": "https://fast-bd.com/cnrr",
+            "description": "Deterministic regex pattern matching across historical feedback logs"
         },
         "cbr": {
             "name": "Connects Burn Rate",
-            "sample_size": 2500,
             "url": "https://fast-bd.com/cbr",
-            "commodity_cbr": 340,
-            "commodity_cac": 51.00,
-            "elite_cbr": 62,
-            "elite_cac": 9.30
+            "formula": "CBR = Total Connects Spent / Contracts Won"
         },
         "lcr": {
             "name": "LinkedIn Connection Rate & ALPS",
-            "sample_size": 14200,
             "url": "https://fast-bd.com/lcr",
-            "pitch_acceptance": 0.142,
-            "hook_acceptance": 0.437
+            "char_limit": 300,
+            "safe_hook_range": "60-120 chars"
         },
         "mvvr": {
             "name": "Mobile Viewport Vulnerability Rate",
-            "sample_size": 8600,
             "url": "https://fast-bd.com/mvvr",
-            "viewport_failure_rate": 0.412,
-            "generic_pitch_reply": 0.012,
-            "flaw_teardown_reply": 0.246
+            "focus": "Diagnostic viewport flaw audits"
         }
     }
 }
 
 CSV_ROWS = [
-    ["Benchmark", "Metric", "Category", "Sample_Size", "Primary_Value", "Lift_Or_Baseline", "Source_URL"],
-    ["IHPI", "Reply_Rate", "Commodity_Fluff", 2500, "4.8%", "Baseline (0%)", "https://fast-bd.com/ihpi"],
-    ["IHPI", "Reply_Rate", "Standard_Qualified", 2500, "12.6%", "+162%", "https://fast-bd.com/ihpi"],
-    ["IHPI", "Reply_Rate", "High_Signal_Hook", 2500, "23.4%", "+387%", "https://fast-bd.com/ihpi"],
-    ["IHPI", "Reply_Rate", "Elite_Conversion", 2500, "38.2%", "+695%", "https://fast-bd.com/ihpi"],
-    ["CNRR", "Salutation_Reply_Rate", "Generic_Opening", 18400, "8.4%", "Baseline (0%)", "https://fast-bd.com/cnrr"],
-    ["CNRR", "Salutation_Reply_Rate", "Neutral_Casual", 18400, "14.2%", "+69%", "https://fast-bd.com/cnrr"],
-    ["CNRR", "Salutation_Reply_Rate", "Verified_First_Name", 18400, "28.6%", "+240%", "https://fast-bd.com/cnrr"],
-    ["CBR", "Connects_Per_Contract", "Commodity_Bidding", 2500, "340 connects ($51.00 CAC)", "Baseline (0%)", "https://fast-bd.com/cbr"],
-    ["CBR", "Connects_Per_Contract", "Standard_Bidding", 2500, "175 connects ($26.25 CAC)", "-48.5% Cost", "https://fast-bd.com/cbr"],
-    ["CBR", "Connects_Per_Contract", "High_Signal_Bidding", 2500, "98 connects ($14.70 CAC)", "-71.2% Cost", "https://fast-bd.com/cbr"],
-    ["CBR", "Connects_Per_Contract", "Elite_Hook_Bidding", 2500, "62 connects ($9.30 CAC)", "-81.8% Cost", "https://fast-bd.com/cbr"],
-    ["LCR", "Connection_Acceptance_Rate", "Immediate_Sales_Pitch", 14200, "14.2%", "Baseline (0%)", "https://fast-bd.com/lcr"],
-    ["LCR", "Connection_Acceptance_Rate", "Blank_No_Note", 14200, "28.4%", "+100%", "https://fast-bd.com/lcr"],
-    ["LCR", "Connection_Acceptance_Rate", "Peer_Compliment", 14200, "31.8%", "+124%", "https://fast-bd.com/lcr"],
-    ["LCR", "Connection_Acceptance_Rate", "Observation_Hook_60_120_Chars", 14200, "43.7%", "+207%", "https://fast-bd.com/lcr"],
-    ["MVVR", "Outbound_Cold_Reply_Rate", "Generic_Design_Pitch", 8600, "1.2%", "Baseline (0%)", "https://fast-bd.com/mvvr"],
-    ["MVVR", "Outbound_Cold_Reply_Rate", "Templated_Portfolio", 8600, "3.8%", "+216%", "https://fast-bd.com/mvvr"],
-    ["MVVR", "Outbound_Cold_Reply_Rate", "Technical_Flaw_Teardown", 8600, "24.6%", "+1950%", "https://fast-bd.com/mvvr"],
+    ["Benchmark", "Framework_Tier", "Scope_Description", "Constraint_Or_Rule", "Strategy_Assessment", "Source_URL"],
+    ["IHPI", "Commodity_Fluff", "Formula score 0-39", "160-char mobile viewport", "Generic greeting wastes preview window", "https://fast-bd.com/ihpi"],
+    ["IHPI", "Standard_Qualified", "Formula score 40-69", "160-char mobile viewport", "Topic mentioned without concrete technical proof", "https://fast-bd.com/ihpi"],
+    ["IHPI", "High_Signal_Hook", "Formula score 70-87", "160-char mobile viewport", "Concrete bug diagnosis or architectural proof snippet", "https://fast-bd.com/ihpi"],
+    ["IHPI", "Elite_Conversion", "Formula score 88-100", "160-char mobile viewport", "Verified name + specific technical solution within 160 chars", "https://fast-bd.com/ihpi"],
+    ["CNRR", "Generic_Opening", "Boilerplate salutation (Dear Hiring Manager)", "160-char mobile viewport", "Boilerplate formality wastes lead preview", "https://fast-bd.com/cnrr"],
+    ["CNRR", "Direct_Problem_Hook", "Lead directly with verified scope/architecture", "160-char mobile viewport", "Recommended when client name is unverified in past feedback", "https://fast-bd.com/cnrr"],
+    ["CNRR", "Verified_First_Name", "Syntactic pattern extraction from feedback", "160-char mobile viewport", "Personalized opening requires human verification before sending", "https://fast-bd.com/cnrr"],
+    ["CBR", "Commodity_Bidding", "Scattergun proposal submissions", "Platform connects quota", "High burn rate and inflated customer acquisition cost", "https://fast-bd.com/cbr"],
+    ["CBR", "Targeted_Bidding", "Selective qualification against verified skills", "Platform connects quota", "Connects conservation model with zero speculative bids", "https://fast-bd.com/cbr"],
+    ["LCR", "Sales_Pitch_Note", "Pitching services directly in invite note", "300-char LinkedIn constraint", "High friction with elevated shadowban risk", "https://fast-bd.com/lcr"],
+    ["LCR", "Observation_Hook", "Relevant contextual observation (60-120 chars)", "300-char LinkedIn constraint", "Natural peer networking compliant with ALPS safety rules", "https://fast-bd.com/lcr"],
+    ["MVVR", "Generic_Design_Pitch", "Unsolicited general website redesign email", "Cold outbound channel", "Easily flagged as bulk commodity spam", "https://fast-bd.com/mvvr"],
+    ["MVVR", "Technical_Flaw_Teardown", "Specific mobile responsive bug or overflow audit", "Cold outbound channel", "High-signal consultative diagnosis with verifiable proof", "https://fast-bd.com/mvvr"],
 ]
 
 
