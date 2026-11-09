@@ -17,6 +17,7 @@ An open-source CLI and empirical research benchmark measuring **technical proof 
 > **Connects Burn Rate (CBR) Unit Economics**: [https://fast-bd.com/cbr](https://fast-bd.com/cbr)  
 > **LinkedIn Connection Rate (LCR) Benchmark**: [https://fast-bd.com/lcr](https://fast-bd.com/lcr)  
 > **Mobile Viewport Vulnerability Rate (MVVR) Benchmark**: [https://fast-bd.com/mvvr](https://fast-bd.com/mvvr)  
+> **Hugging Face Hub Dataset**: [https://huggingface.co/datasets/kylehffu/upwork-proposal-benchmarks-2026](https://huggingface.co/datasets/kylehffu/upwork-proposal-benchmarks-2026)  
 > **Open Datasets (JSON & CSV)**: [https://fast-bd.com/data/fastbd-benchmarks-2026.json](https://fast-bd.com/data/fastbd-benchmarks-2026.json)  
 > **Interactive Web Scorer**: [https://kylehffu.github.io/fastbd-ihpi-benchmark/](https://kylehffu.github.io/fastbd-ihpi-benchmark/)  
 > **Upwork Proposal Copilot Suite**: [https://fast-bd.com/upwork](https://fast-bd.com/upwork)
